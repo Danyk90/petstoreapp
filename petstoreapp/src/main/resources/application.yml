@@ -1,0 +1,45 @@
+bing:
+  search:
+    subscription:
+      key: ${BING_SEARCH_SUBSCRIPTION_KEY:}
+petstore:
+  service:
+    pet:
+     url: ${PETSTOREPETSERVICE_URL:https://petservicepetstore.azurewebsites.net}
+    product:
+      url: ${PETSTOREPRODUCTSERVICE_URL:https://petstoreproductservice.azurewebsites.net}
+    order:
+      url: ${PETSTOREORDERSERVICE_URL:https://wpetstoreorderservice.azurewebsites.net}
+  logging:
+    additional-headers-to-log: ${PETSTORE_ADDITIONAL_HEADERS_TO_LOG:}
+    additional-headers-to-send: ${PETSTORE_ADDITIONAL_HEADERS_TO_SEND:}
+  signalR:
+    negotiation-url: ${SIGNALR_NEGOTIATION_URL:}
+    service-url: ${SIGNALR_SERVICE_URL:}
+    key: ${SIGNALR_SERVICE_KEY:}
+    update:
+      fixedRate: ${SIGNALR_UPDATE_FIXEDRATE:60000}
+server:
+  port: ${PETSTOREAPP_SERVER_PORT:8080}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"       
+  trace:
+    http:
+      enabled: true 
+  endpoint:
+    httptrace:
+      enabled: true
+spring:
+  application:
+    name: petstoreapp
+  thymeleaf:
+    cache: false
+  cache:
+    cache-names: currentUsers
+
+azure:
+  application-insights:
+    instrumentation-key: c058a44f-0170-4470-8c5e-d54293f36cb4
