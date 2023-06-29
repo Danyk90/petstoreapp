@@ -39,7 +39,3 @@ spring:
     cache: false
   cache:
     cache-names: currentUsers
-
-azure:
-  application-insights:
-    instrumentation-key: c058a44f-0170-4470-8c5e-d54293f36cb4
